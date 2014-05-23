@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simpleblog</title>
+  <title><%= full_title(yield(:title)) %></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
 
-<%= yield %>
+  <%= render :partial => 'layouts/header' %>
+
+  <div class="container">
+    <div id="main" class="container-fluid">
+      <%= yield %>
+      <hr/>
+      <footer class="footer">
+        <p class="pull-right"><a href="#">返回页首</a></p>
+        <p>&copy; 2014 广东工业大学 - 2011信管4 - 张水木  &nbsp; &middot; <%= link_to "SimpleBlog", root_path %> &nbsp; &middot; <%= link_to "About", root_path %></p>
+      </footer>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -1,0 +1,27 @@
+<div class="navbar navbar-inverse navbar-fixed-top" >
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav" style="margin-top:8px;"><strong ><font size="6" color="#08c" >SimpleBlog</font></strong></ul>
+        <ul class="nav navbar-nav navbar-right pull-right">
+          <form class="navbar-search">
+            <input type="text" class="search-query" placeholder="Search">
+          </form>
+          <li class="light-blue">
+            <a data-toggle="dropdown" href="#" class="dropdown-toggle"> 
+              <span class="user-info"> <small>欢迎您，</small>RUBY</span>
+              <i class="icon-caret-down"></i> 
+            </a>
+            <ul class="user-menu pull-right dropdown-menu">
+              <li><%= link_to "个人资料", root_path %> </li>
+              <!-- <li> <a href="#"> <i class="icon-user"></i> 设置 </a> </li> -->
+              <li><%= link_to "设置", root_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "退出", "", method: "delete" %></li>
+            </ul>
+          </li>
+        </ul> 
+      </div>
+    </div>  
+  </div>
+</div>
