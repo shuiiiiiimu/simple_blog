@@ -2,7 +2,7 @@
   <div class="navbar-inner">
     <div class="container">
       <div class="nav-collapse collapse">
-        <ul class="nav" style="margin-top:8px;"><strong ><font size="6" color="#08c" >SimpleBlog</font></strong></ul>
+        <ul class="nav" style="margin-top:8px;"><a href="/"><strong ><font size="6" color="#08c" >SimpleBlog</font></strong></a></ul>
         <ul class="nav navbar-nav navbar-right pull-right">
           <form class="navbar-search">
             <input type="text" class="search-query" placeholder="Search">
@@ -11,20 +11,20 @@
             <% if user_signed_in? %>
               <a data-toggle="dropdown" href="#" class="dropdown-toggle"> 
                 <%= gravatar_for_header current_user %>
-                <span class="user-info"> <small>欢迎您，</small><%= current_user.name %> </span>
+                <span class="user-info"> <small>Welcome，</small><%= current_user.name %> </span>
                 <i class="icon-caret-down"></i> 
               </a>
               <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                <li><%= link_to "个人资料", users_show_path %> </li>
+                <li><%= link_to "Info", users_show_path %> </li>
                 <!-- <li> <a href="#"> <i class="icon-user"></i> 设置 </a> </li> -->
-                <li><%= link_to "设置", edit_user_registration_path(current_user) %></li>
+                <li><%= link_to "Account settings", edit_user_registration_path(current_user) %></li>
                 <li class="divider"></li>
-                <li><%= link_to "退出", destroy_user_session_path, method: "delete" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
               </ul>
             <% else %>
               <!-- <li><a data-toggle="modal" href="#regModal" >请登陆?</a></li> -->
-              <li><%= link_to "请登陆?", user_session_path %></li>
-              <li><%= link_to "注册?", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
           </li>
         </ul> 
