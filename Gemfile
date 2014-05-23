@@ -39,7 +39,11 @@ gem 'spring',        group: :development
 
 # use twitter-bootstrap-rails
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-will_paginate', '0.0.3'
 gem 'less-rails'
+
+# 分页
+gem 'will_paginate', '3.0.4'
 
 # user manager
 gem 'devise'

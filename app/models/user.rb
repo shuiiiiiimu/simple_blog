@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   
   before_create :default_user_name
 
+  has_many :topics, dependent: :destroy
+
   private
 
     def default_user_name
