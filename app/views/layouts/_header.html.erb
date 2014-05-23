@@ -8,17 +8,24 @@
             <input type="text" class="search-query" placeholder="Search">
           </form>
           <li class="light-blue">
-            <a data-toggle="dropdown" href="#" class="dropdown-toggle"> 
-              <span class="user-info"> <small>欢迎您，</small>RUBY</span>
-              <i class="icon-caret-down"></i> 
-            </a>
-            <ul class="user-menu pull-right dropdown-menu">
-              <li><%= link_to "个人资料", root_path %> </li>
-              <!-- <li> <a href="#"> <i class="icon-user"></i> 设置 </a> </li> -->
-              <li><%= link_to "设置", root_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "退出", "", method: "delete" %></li>
-            </ul>
+            <% if user_signed_in? %>
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle"> 
+                <%= gravatar_for_header current_user %>
+                <span class="user-info"> <small>欢迎您，</small><%= current_user.name %> </span>
+                <i class="icon-caret-down"></i> 
+              </a>
+              <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                <li><%= link_to "个人资料", users_show_path %> </li>
+                <!-- <li> <a href="#"> <i class="icon-user"></i> 设置 </a> </li> -->
+                <li><%= link_to "设置", edit_user_registration_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to "退出", destroy_user_session_path, method: "delete" %></li>
+              </ul>
+            <% else %>
+              <!-- <li><a data-toggle="modal" href="#regModal" >请登陆?</a></li> -->
+              <li><%= link_to "请登陆?", user_session_path %></li>
+              <li><%= link_to "注册?", new_user_registration_path %></li>
+            <% end %>
           </li>
         </ul> 
       </div>
