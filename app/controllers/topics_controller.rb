@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     #@topics = Topic.all
-    @topics = Topic.paginate(page: params[:page])
+    @topics = Topic.paginate(page: params[:page], :per_page => 20)
   end
 
   # GET /topics/1

@@ -40,7 +40,14 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @topics %>
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @topics %>
+  </div>
+  <div class="flickr_pagination">
+    <%= will_paginate @topics, :container => false %>
+  </div>
+</div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_topic_path,

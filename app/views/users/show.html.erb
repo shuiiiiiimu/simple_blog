@@ -61,5 +61,7 @@
 	    <% end %>
 	  </tbody>
 	</table>
-  <%= will_paginate @topics %>
 <% end %>
+<div class="flickr_pagination">
+  <%= will_paginate @topics, :container => false %>
+</div>
