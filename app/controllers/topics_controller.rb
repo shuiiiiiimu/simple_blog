@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /topics
   # GET /topics.json
@@ -25,7 +26,8 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.json
   def create
-    @topic = Topic.new(topic_params)
+    #@topic = Topic.new(topic_params)
+    @topic = current_user.topics.new(topic_params)
 
     respond_to do |format|
       if @topic.save

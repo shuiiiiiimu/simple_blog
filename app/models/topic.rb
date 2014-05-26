@@ -5,6 +5,6 @@ class Topic < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
 
   validates_presence_of :content, :title
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true
 
 end

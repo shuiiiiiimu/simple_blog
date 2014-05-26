@@ -1,4 +1,5 @@
 <%= form_for @topic, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render 'layouts/error_messages', object: f.object %>
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -12,9 +13,11 @@
     </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                topics_path, :class => 'btn' %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  topics_path, :class => 'btn' %>
+    </div>
+  <% end -%>
 <% end %>

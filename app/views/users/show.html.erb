@@ -43,8 +43,8 @@
 	  <tbody>
 	    <% @topics.each do |topic| %>
 	      <tr>
-	        <td><%= topic.title %></td>
-	        <td><%= topic.content %></td>
+	        <td><%= topic.title.to_s[0..50] %></td>
+	        <td><%= topic.content.to_s[0..50] %></td>
 	        <td><%= topic.hits %></td>
 	        <td><%= topic.like %></td>
 	        <td><%=l topic.created_at %></td>
