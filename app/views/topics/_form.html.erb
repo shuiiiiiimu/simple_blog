@@ -1,20 +1,14 @@
 <%= form_for @topic, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :user_id, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
+      <%= f.text_field :title, :class => 'span5', :placeholder => 'your title......' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :content, :class => 'text_field' %>
+      <%= f.text_area :content, :class => 'text_area topic_editor', :placeholder => 'content......' %>
     </div>
   </div>
 
