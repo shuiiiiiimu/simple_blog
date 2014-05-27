@@ -9,6 +9,19 @@ class User < ActiveRecord::Base
 
   has_many :topics, dependent: :destroy
 
+  STATE = {
+    :admin => 0,
+    :normal => 1
+  }
+
+  def has_role?(role)
+    case role
+      when :admin then self.state == STATE[:admin]
+      when :member then self.state == STATE[:normal]
+      else false
+    end
+  end
+
   private
 
     def default_user_name

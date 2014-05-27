@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  load_and_authorize_resource only: [:new, :edit, :create, :update, :destroy]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
@@ -21,6 +22,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
+    authorize! :read, @topic
   end
 
   # POST /topics

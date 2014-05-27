@@ -45,3 +45,6 @@ gem 'will_paginate-bootstrap'
 
 # user manager
 gem 'devise'
+
+# use authorization gem file
+gem 'cancancan'
