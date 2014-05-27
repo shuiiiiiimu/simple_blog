@@ -7,4 +7,6 @@ class Topic < ActiveRecord::Base
   validates_presence_of :content, :title
   validates :content, presence: true
 
+  has_many :comments
+
 end

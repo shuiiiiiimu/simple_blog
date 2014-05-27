@@ -30,4 +30,24 @@
   <% end -%>
 </div>
 
-<%=@ower %>
+<div class="breadcrumb">
+  <h2>About Comments</h2>
+  <div id="comments">
+    <%= render :partial => @topic.comments %>
+  </div>
+</div>
+
+<% if user_signed_in? -%>
+  <div class="form-actions">
+    <%= form_for [@topic, Comment.new], :remote => true do |f| %>
+      <%= render 'layouts/error_messages', object: f.object %>
+      <div class="control-group">
+        <%= f.label :content, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :content, :class => 'comment_editor text_area' %>
+        </div>
+      </div>
+      <%= f.submit 'Add comment', :class => 'btn btn-primary btn-small' %>
+    <% end %>
+  </div>
+<% end -%>

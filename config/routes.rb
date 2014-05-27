@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :topics
+  get 'comments/create'
+
+  resources :topics do
+    resources :comments, :only => [:create]
+  end
 
   root 'home#index'
 
