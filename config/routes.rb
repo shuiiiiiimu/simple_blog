@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/create'
 
   resources :topics do
     resources :comments, :only => [:create]
@@ -8,9 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/about', :path => "/about"
-  get 'users/show'
+  post 'users/show', :path => "/user_info"
 
-  devise_for :users
+  devise_for :users, :path => "account"
 
 
 

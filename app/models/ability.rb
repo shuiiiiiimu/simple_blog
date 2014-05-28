@@ -15,6 +15,7 @@ class Ability
       end
 
       can :create, Comment
+      can :read, User
       basic_read_only
     else
       # banned or unknown situation

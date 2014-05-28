@@ -15,7 +15,7 @@
                 <i class="icon-caret-down"></i> 
               </a>
               <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                <li><%= link_to "Info", users_show_path %> </li>
+                <li><%= link_to "Info", users_show_path, method: "post" %> </li>
                 <!-- <li> <a href="#"> <i class="icon-user"></i> 设置 </a> </li> -->
                 <li><%= link_to "Account settings", edit_user_registration_path(current_user) %></li>
                 <li class="divider"></li>
