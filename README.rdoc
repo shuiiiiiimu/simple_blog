@@ -1,3 +1,13 @@
 == README
 
 Developing..............
+
+
+== ABOUT
+
+a simple blog, interact with friends.
+
+
+== CONTACT
+
+Email: zhangshuimu123@gmail.com
